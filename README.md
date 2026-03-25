@@ -1,5 +1,5 @@
-# 📊 IBM Market Intelligence Suite v1.1.0
-**A Polyglot Financial Terminal Simulation (C++/Python/Bash)**
+![Build Status](https://github.com/LauroBeck/IBMInBloombergStyle/actions/workflows/audit.yml/badge.svg) # 📊 IBM Market Intelligence Suite v1.1.0
+![Qiskit](https://img.shields.io/badge/Quantum-Qiskit-8A2BE2?style=for-the-badge&logo=qiskit) **A Polyglot Financial Terminal Simulation (C++/Python/Bash)**
 
 ![Python](https://img.shields.io/badge/Python-3.13-blue?style=for-the-badge&logo=python)
 ![C++](https://img.shields.io/badge/C++-17-00599C?style=for-the-badge&logo=c%2B%2B)

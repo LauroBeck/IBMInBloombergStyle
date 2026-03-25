@@ -1,0 +1,33 @@
+name: 2026 Terminal Audit
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python 3.13
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.13'
+        cache: 'pip'
+
+    - name: Install Quantum & Finance Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install qiskit qiskit-aer yfinance pandas matplotlib plotly kaleido
+
+    - name: Audit C++ Performance Tier
+      run: |
+        g++ -O3 bloomberg.cpp -o bloomberg_bin
+        ./bloomberg_bin IBM
+
+    - name: Audit Quantum Alpha Engine (Phase 2)
+      run: |
+        python bbg_quantum.py
