@@ -14,6 +14,7 @@ TICKER=${1:-"IBM"}
 MODE=${2:-"BDP"}
 
 case $MODE in
+    "SUMM") ./venv/bin/python3 bbg_summary.py ;;
     "AISP") ./venv/bin/python3 bbg_treasury.py ;;
     "QNTM") ./venv/bin/python3 bbg_quantum.py ;;
     "RV") ./venv/bin/python3 bbg_rv.py ;;
@@ -23,5 +24,5 @@ case $MODE in
     "FA")
         ./venv/bin/python3 -c "import yfinance as yf; s=yf.Ticker('$TICKER'); print(s.income_stmt.iloc[:,:2])"
         ;;
-    *) echo "Usage: ./edit_market.sh [TICKER] [AISP|QNTM|RV|GP|BDP|DES|FA]" ;;
+    *) echo "Usage: ./edit_market.sh [TICKER] [SUMM|AISP|QNTM|RV|GP|BDP|DES|FA]" ;;
 esac
